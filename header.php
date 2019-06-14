@@ -34,6 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="galery.php">Galery</a></li>
                     <li class="nav-item"><a class="nav-link" href="articles.php">My articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainingList.php">Trainings</a></li>
                 </ul>
                     <?php
                         
