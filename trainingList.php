@@ -17,8 +17,9 @@
     <div id="training_table">
      <table class="table table-bordered">
       <tr>
-       <th width="70%">Date</th>  
-       <th width="30%">View</th>
+       <th width="70%">Date</th>
+       <th width="15%">Edit</th>  
+       <th width="15%">View</th>
       </tr>
       <?php
       while($row = mysqli_fetch_array($result))
@@ -26,6 +27,8 @@
       ?>
       <tr>
        <td><?php echo $row["date"]; ?></td>
+       <td><input type="button" name="edit" value="edit" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs edit_data" /></td>
+
        <td><input type="button" name="view" value="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs view_data" /></td>
       </tr>
       <?php
@@ -62,6 +65,8 @@
      </select>
      <br />  
      <br />
+     <input type="hidden" name="training_id" id="training_id" />
+
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
 
     </form>
@@ -93,7 +98,31 @@
 
 <script>  
 $(document).ready(function(){
- $('#insert_form').on("submit", function(event){  
+    $('#add').click(function(){  
+           $('#insert').val("Insert");  
+           $('#insert_form')[0].reset();  
+      });  
+        $(document).on('click', '.edit_data', function(){  
+           var training_id = $(this).attr("id");  
+           $.ajax({  
+                url:"fetch.php",  
+                method:"POST",  
+                data:{training_id:training_id},  
+                dataType:"json",  
+                success:function(data){  
+                     $('#date').val(data.date);  
+                     $('#address').val(data.address);  
+                     $('#location').val(data.location);  
+                     $('#training_id').val(data.id);  
+                     $('#insert').val("Update");  
+                     $('#add_data_Modal').modal('show');  
+                }  
+           });  
+      }); 
+       
+ $('#insert_form').on("submit", function(event){
+    
+
   event.preventDefault();  
   if($('#date').val() == "")  
   {  
@@ -117,7 +146,8 @@ $(document).ready(function(){
      $('#add_data_Modal').modal('hide');  
      $('#training_table').html(data);  
     }  
-   });  
+
+   }); 
   }  
  });
 
@@ -127,6 +157,7 @@ $(document).ready(function(){
  $(document).on('click', '.view_data', function(){
   //$('#dataModal').modal();
   var training_id = $(this).attr("id");
+  if(training_id != ''){
   $.ajax({
    url:"select.php",
    method:"POST",
@@ -136,6 +167,7 @@ $(document).ready(function(){
     $('#dataModal').modal('show');
    }
   });
+  }
  });
 });  
  </script>
