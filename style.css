@@ -5,8 +5,12 @@
 }
 body {
   background-color: grey;
+  margin: 0 0 100px;
 }
-
+html {
+  position: relative;
+  min-height: 100%;
+}
 .btn {
   padding: 0.5rem 1rem;
   background: #00eef7;
@@ -217,8 +221,50 @@ nav {
   margin-top: 50px;
 }
 
-/* @media (max-width: 600px) {
-  body {
-    background-color: lightblue;
+.nav__other {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5d4954;
+  font-family: "Poppins", sans-serif;
+  top: 0;
+  width: 80%;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.video {
+  margin: 50px 200px;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
   }
-} */
+  .nav__other {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .content form select {
+    width: 50%;
+  }
+}

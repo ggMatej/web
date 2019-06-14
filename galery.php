@@ -73,6 +73,3 @@
         </div>
          </main>
 
-<?php
-    require "footer.php";
-?>
