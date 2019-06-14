@@ -1,8 +1,8 @@
-* {
+/* * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-}
+} */
 body {
   background-color: grey;
   margin: 0 0 100px;
@@ -11,19 +11,19 @@ html {
   position: relative;
   min-height: 100%;
 }
-.btn {
+/* .btn {
   padding: 0.5rem 1rem;
   background: #00eef7;
   color: white;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-}
-.btn:hover {
+} */
+/* .btn:hover {
   color: white !important;
   background: #004346;
-}
+} */
 
-nav {
+/* nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -32,7 +32,7 @@ nav {
   font-family: "Poppins", sans-serif;
   top: 0;
   width: 100%;
-}
+} */
 
 .logo {
   text-decoration: none;
@@ -42,7 +42,7 @@ nav {
   font-size: 20px;
 }
 
-.nav-links {
+/* .nav-links {
   display: flex;
   justify-content: space-around;
   width: 30%;
@@ -58,9 +58,9 @@ nav {
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
-}
+} */
 
-.login-form {
+/* .login-form {
   display: flex;
   text-decoration: none;
   justify-content: space-around;
@@ -84,7 +84,7 @@ nav {
 
 .login-form button:hover {
   background-color: rgba(226, 226, 226, 0.158);
-}
+} */
 .content {
   width: 80%;
   margin: 80px auto 30px;
@@ -242,11 +242,11 @@ footer {
   text-align: center;
 }
 
-.video {
+/* .video {
   margin: 50px 200px;
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .nav {
     display: flex;
     flex-direction: column;
@@ -267,4 +267,8 @@ footer {
   .content form select {
     width: 50%;
   }
+} */
+
+.box {
+  margin: 10px 0 !important;
 }

@@ -14,7 +14,7 @@
                         <option value="race">Race</option>
                         <option value="other">Other</option>
                     </select><br>
-                    <input class="btn" type="submit" name="submit" value="Filter!">
+                    <input class="btn btn-primary" type="submit" name="submit" value="Filter!">
                 </form>
                 
                     <?php
